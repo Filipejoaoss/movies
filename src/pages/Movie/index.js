@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import api from "../../services/api";
 
@@ -8,6 +9,8 @@ import "./style.css";
 
 function Movie() {
     const { id } = useParams();
+    const navigate = useNavigate();
+
     const [movie, setMovie] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -24,6 +27,8 @@ function Movie() {
                 })
                 .catch(() => {
                     console.log("Movie not found!");
+                    navigate("/", { replace: true });
+                    return;
                 })
         }
 
@@ -32,7 +37,7 @@ function Movie() {
         return () => {
             console.log("Componente desmontado");
         }
-    }, []);
+    }, [navigate, id]);
 
     if (loading) {
         return (
@@ -56,7 +61,7 @@ function Movie() {
             <div className="btnArea">
                 <button> Save </button>
                 <button>
-                    <a href="#">
+                    <a target="blank" rel="external" href={`https://www.youtube.com/results?search_query=${movie.title} trailer`}>
                         Trailer
                     </a>
                 </button>
