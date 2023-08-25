@@ -39,3 +39,24 @@
     margin-right: 14px;
     font-family: cursive;
 }
+
+.myMovies button {
+     margin-right: 12px;
+     margin-left: 12px;
+     width: 125px;
+     font-size: 20px;
+     font-family: cursive;
+     border: 0;
+     outline: none;
+     padding: 12px;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: all 0.5s;
+     background-color: #C0392B;
+     color: #FFFFFF;
+ }
+
+.myMovies button:hover {
+    background-color: #AC3326;
+    color: #FFFFFF;
+}

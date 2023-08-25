@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import api from "../../services/api";
 
@@ -34,9 +35,6 @@ function Movie() {
 
         loadMovie();
 
-        return () => {
-            console.log("Componente desmontado");
-        }
     }, [navigate, id]);
 
     function saveMovie() {
@@ -47,13 +45,13 @@ function Movie() {
         const hasMovie = saveMovies.some((saveMovies) => saveMovies.id === movie.id)
 
         if (hasMovie) {
-            alert("That movie is in your list!");
+            toast.warn("That movie is in your list!");
             return;
         }
 
         saveMovies.push(movie);
         localStorage.setItem("@primeflix", JSON.stringify(saveMovies));
-        alert("Movie Save Successful");
+        toast.success("Movie Save Successful!");
     }
 
     if (loading) {
