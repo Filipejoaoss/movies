@@ -8,7 +8,6 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
-    font-family: cursive;
 }
 
 .moviesList article {
@@ -22,7 +21,6 @@
     margin-bottom: 14px;
     text-align: center;
     font-size: 22px;
-    font-family: cursive;
     display: block;
 }
 
@@ -42,7 +40,6 @@
     justify-content: center;
     padding: 10px;
     font-size: 24px;
-    font-family: cursive;
     background-color: #C0392B;
     text-decoration: #FFFFFF;
     color: #FFFFFF;
