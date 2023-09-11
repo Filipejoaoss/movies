@@ -2,7 +2,7 @@
 
 Small front-end project that uses TMDB API (https://www.themoviedb.org/) to display the movies in the cinema.
 
-The Framework used for this project was React.
+The technology used for this project was React.
 
 Link deploy: https://filipejoaoss-movies.netlify.app/
 
